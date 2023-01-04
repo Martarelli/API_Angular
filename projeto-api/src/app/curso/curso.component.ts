@@ -12,4 +12,23 @@ export class CursoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Cadastro
+  cadastro(): void {
+    alert("CADASTRO");
+  }
+
+  //Selecao
+  selecao(): void {
+    alert("SELECAO");
+  }
+
+  //Alterar
+  alterar(): void {
+    alert("ALTERAR");
+  }
+
+  //Remover
+  remover(): void {
+    alert("Remover");
+  }
 }
