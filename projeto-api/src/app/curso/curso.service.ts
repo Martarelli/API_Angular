@@ -15,6 +15,9 @@ export class CursoService {
   //Vetor de cursos
   vetor: Curso[] = [];
 
+  //Curso
+  curso = new Curso;
+
   //Construtor
   constructor(private http: HttpClient) { }
 
@@ -53,4 +56,8 @@ export class CursoService {
     )
   }
 
+  //Selecionar curso especifico
+  selecionarCurso(c: Curso){
+    this.curso.idCurso = c.idCurso;
+  }
 }
