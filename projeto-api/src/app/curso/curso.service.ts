@@ -48,7 +48,7 @@ export class CursoService {
     return this.http.delete(this.url + 'excluir', {params: params}).pipe(
       map((res) => {
         const filtro = this.vetor.filter((curso) => {
-          // return +curso['idCurso'] !== +c.idCurso;
+          return +curso['idCurso'] !== +c.idCurso;
         });
 
         return this.vetor = filtro;
@@ -59,5 +59,23 @@ export class CursoService {
   //Selecionar curso especifico
   selecionarCurso(c: Curso){
     this.curso.idCurso = c.idCurso;
+  }
+
+  //Atualizar Curso
+  atualizarCurso(c: Curso): Observable<Curso[]>{
+    return this.http.put(this.url+'alterar', {cursos: c}).pipe(
+      map((res) => {
+        const cursoAlterado = this.vetor.find((item) => {
+          return +item['idCurso'] === +['idCurso'];
+        });
+
+        if(cursoAlterado){
+          cursoAlterado['nomeCurso'] = c['nomeCurso'];
+          cursoAlterado['valorCurso'] = c['valorCurso'];
+        }
+
+        return this.vetor;
+      })
+    )
   }
 }
