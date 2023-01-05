@@ -1,4 +1,8 @@
-<button (click)="cadastro">Cadastrar</button>
-<button (click)="selecao">Selecionar</button>
-<button (click)="alterar">Alterar</button>
-<button (click)="remover">Excluir</button>
+<!-- tabela -->
+<table border="1">
+  <tr *ngFor="let curso of vetor">
+    <td>{{curso.nomeCurso}}</td>
+    <td>{{curso.valorCurso}}</td>
+  </tr>
+
+</table>

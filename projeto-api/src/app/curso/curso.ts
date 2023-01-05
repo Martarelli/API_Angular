@@ -1,7 +1,7 @@
 export class Curso {
 
-  constructor(nomeCurso: string, valorCurso: number, idCurso?:number){
-
-  }
+  nomeCurso: string = '';
+  valorCurso: number = 0;
+  idCurso?:number = 0;
 
 }
